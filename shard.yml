@@ -1,0 +1,16 @@
+name: auto-build-sqlite
+version: 0.1.0
+
+authors:
+  - admin
+
+dependencies:
+  sqlite3:
+    github: crystal-lang/crystal-sqlite3
+    
+scripts:
+  postinstall: chmod +x auto_build_sqlite.sh && ./auto_build_sqlite.sh
+
+crystal: 1.2.0
+
+license: MIT
