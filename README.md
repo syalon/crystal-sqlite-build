@@ -1,27 +1,21 @@
 # crystal-sqlite-build
 
-TODO: Write a description here
+Automatically compiles the required C library for crystal lang sqlite3.
 
 ## Installation
 
-TODO: Write installation instructions here
+Add this to your application's `shard.yml`:
+
+```yml
+dependencies:
+  auto-build-sqlite:
+    github: syalon/crystal-sqlite-build
+```
 
 ## Usage
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
-## Contributing
-
-1. Fork it (<https://github.com/your-github-user/crystal-sqlite-build/fork>)
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+Same as sqlite3 library.
 
 ## Contributors
 
-- [syalon](https://github.com/your-github-user) - creator and maintainer
+- [syalon](https://github.com/syalon) - creator and maintainer
