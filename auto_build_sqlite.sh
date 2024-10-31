@@ -6,9 +6,13 @@
 # 1、克隆源代码 / clone source code
 SOURCE_CLONE_DIR="sqlite3"
 COMPILE_VERSION="version-3.34.0"
+CONFIGURE_FILE="$SOURCE_CLONE_DIR/configure"
 
-rm -rf $SOURCE_CLONE_DIR
-git clone https://github.com/sqlite/sqlite.git $SOURCE_CLONE_DIR && cd $SOURCE_CLONE_DIR && git checkout $COMPILE_VERSION
+# -f 参数判断配置文件是否存在 不存在才 clone，不然每次 clone 很慢。
+if [ ! -f "$CONFIGURE_FILE" ]; then
+	rm -rf $SOURCE_CLONE_DIR
+	git clone git@github.com:sqlite/sqlite.git $SOURCE_CLONE_DIR && cd $SOURCE_CLONE_DIR && git checkout $COMPILE_VERSION
+fi
 
 # 2、编译 / compile
 ./configure
