@@ -8,6 +8,9 @@ SOURCE_CLONE_DIR="sqlite3"
 COMPILE_VERSION="version-3.34.0"
 CONFIGURE_FILE="$SOURCE_CLONE_DIR/configure"
 
+# 设置错误处理: 脚本会在执行任何一个命令失败时立即退出，并返回一个非零的退出码。
+set -e
+
 # -f 参数判断配置文件是否存在 不存在才 clone，不然每次 clone 很慢。
 if [ ! -f "$CONFIGURE_FILE" ]; then
 	rm -rf $SOURCE_CLONE_DIR
