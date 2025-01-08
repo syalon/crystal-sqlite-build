@@ -15,8 +15,11 @@ set -e
 if [ ! -f "$CONFIGURE_FILE" ]; then
 	rm -rf $SOURCE_CLONE_DIR
 	git clone -b $COMPILE_VERSION https://github.com/sqlite/sqlite.git $SOURCE_CLONE_DIR --depth=1
+	cd $SOURCE_CLONE_DIR && git checkout $COMPILE_VERSION
+else
+	# git clone 失败，手动拷贝源代码到 sqlite3 目录则不用 checkout
+	cd $SOURCE_CLONE_DIR
 fi
-cd $SOURCE_CLONE_DIR && git checkout $COMPILE_VERSION
 
 # 2、编译 / compile
 ./configure
